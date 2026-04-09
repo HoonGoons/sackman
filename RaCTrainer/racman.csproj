@@ -148,11 +148,25 @@
     <Compile Include="FlagViewer.Designer.cs">
       <DependentUpon>FlagViewer.cs</DependentUpon>
     </Compile>
+    <Compile Include="LBP1\LBP1Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LBP1\LBP1Form.Designer.cs">
+      <DependentUpon>LBP1Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LBP2\LBP2Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LBP2\LBP2Form.Designer.cs">
+      <DependentUpon>LBP2Form.cs</DependentUpon>
+    </Compile>
     <Compile Include="Memory\RPCS3.cs" />
     <Compile Include="offsets\ACIT\ACITAddresses.cs" />
     <Compile Include="offsets\ACIT\ACITWeapon.cs" />
     <Compile Include="offsets\ACIT\ACITWeaponFactory.cs" />
     <Compile Include="offsets\ACIT\ACITTimer.cs" />
+    <Compile Include="offsets\LBP1\lbp1.cs" />
+    <Compile Include="offsets\LBP2\lbp2.cs" />
     <Compile Include="offsets\RAC4\BotsUnlocks.cs" />
     <Compile Include="offsets\RAC4\BotsUnlocksFactory.cs" />
     <Compile Include="ChargebootColorPicker.cs">
@@ -423,6 +437,12 @@
     <EmbeddedResource Include="FlagViewer.resx">
       <DependentUpon>FlagViewer.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="LBP1\LBP1Form.resx">
+      <DependentUpon>LBP1Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LBP2\LBP2Form.resx">
+      <DependentUpon>LBP2Form.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MemoryForm.resx">
       <DependentUpon>MemoryForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -547,6 +567,9 @@
     <None Include="autosplitters\acit-autosplitter.asl">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Include="autosplitters\lbp1-autosplitter.asl" />
+    <None Include="autosplitters\lbp2-autosplitter-lv2.asl" />
+    <None Include="autosplitters\lbp2-autosplitter.asl" />
     <None Include="autosplitters\rac4-autosplitter.asl" />
     <None Include="autosplitters\tod-autosplitter.asl" />
     <None Include="autosplitters\rac2-autosplitter-old.asl" />
@@ -567,6 +590,10 @@
   <ItemGroup />
   <ItemGroup>
     <Content Include="autosplitters\rac2planets.txt" />
+    <Content Include="lbp1+k.ico" />
+    <Content Include="lbp2.ico" />
+    <Content Include="lbp3.ico" />
+    <Content Include="spm.ico" />
     <None Include="Resources\nan_otech_boost.png" />
     <None Include="Resources\Platinum_bolt.png" />
     <None Include="Resources\Clank_Needs_a_New_Pair_of_Shoes.png" />

@@ -36,20 +36,12 @@
             this.nameColumnHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.AddressColumnHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.ValueColumnHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.selectedMobyComboBox = new System.Windows.Forms.ComboBox();
-            this.refreshMobysButton = new System.Windows.Forms.Button();
-            this.mobyInspectorListView = new System.Windows.Forms.ListView();
-            this.mobyAddressHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.mobyPropNameHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.mobyValueHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.saveWatchListButton = new System.Windows.Forms.Button();
             this.addressLabel = new System.Windows.Forms.Label();
             this.typeLabel = new System.Windows.Forms.Label();
             this.savedWatchlistsComboBox = new System.Windows.Forms.ComboBox();
             this.watchlistsLabel = new System.Windows.Forms.Label();
             this.memoryWatchLabel = new System.Windows.Forms.Label();
-            this.mobyInspectorLabel = new System.Windows.Forms.Label();
-            this.dumpButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // registerAddressTextBox
@@ -130,62 +122,6 @@
             this.ValueColumnHeader.Text = "Value";
             this.ValueColumnHeader.Width = 111;
             // 
-            // selectedMobyComboBox
-            // 
-            this.selectedMobyComboBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.selectedMobyComboBox.FormattingEnabled = true;
-            this.selectedMobyComboBox.Location = new System.Drawing.Point(433, 26);
-            this.selectedMobyComboBox.Name = "selectedMobyComboBox";
-            this.selectedMobyComboBox.Size = new System.Drawing.Size(310, 21);
-            this.selectedMobyComboBox.TabIndex = 4;
-            this.selectedMobyComboBox.SelectedIndexChanged += new System.EventHandler(this.selectedMobyComboBox_SelectedIndexChanged);
-            // 
-            // refreshMobysButton
-            // 
-            this.refreshMobysButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.refreshMobysButton.Location = new System.Drawing.Point(749, 25);
-            this.refreshMobysButton.Name = "refreshMobysButton";
-            this.refreshMobysButton.Size = new System.Drawing.Size(160, 23);
-            this.refreshMobysButton.TabIndex = 5;
-            this.refreshMobysButton.Text = "Refresh mobys (pauses game)";
-            this.refreshMobysButton.UseVisualStyleBackColor = true;
-            this.refreshMobysButton.Click += new System.EventHandler(this.refreshMobysButton_Click);
-            // 
-            // mobyInspectorListView
-            // 
-            this.mobyInspectorListView.AllowColumnReorder = true;
-            this.mobyInspectorListView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.mobyInspectorListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.mobyAddressHeader,
-            this.mobyPropNameHeader,
-            this.mobyValueHeader});
-            this.mobyInspectorListView.GridLines = true;
-            this.mobyInspectorListView.HideSelection = false;
-            this.mobyInspectorListView.Location = new System.Drawing.Point(433, 53);
-            this.mobyInspectorListView.Name = "mobyInspectorListView";
-            this.mobyInspectorListView.Size = new System.Drawing.Size(541, 503);
-            this.mobyInspectorListView.TabIndex = 6;
-            this.mobyInspectorListView.UseCompatibleStateImageBehavior = false;
-            this.mobyInspectorListView.View = System.Windows.Forms.View.Details;
-            // 
-            // mobyAddressHeader
-            // 
-            this.mobyAddressHeader.Text = "Address";
-            this.mobyAddressHeader.Width = 96;
-            // 
-            // mobyPropNameHeader
-            // 
-            this.mobyPropNameHeader.Text = "Property";
-            this.mobyPropNameHeader.Width = 149;
-            // 
-            // mobyValueHeader
-            // 
-            this.mobyValueHeader.Text = "Value";
-            this.mobyValueHeader.Width = 217;
-            // 
             // saveWatchListButton
             // 
             this.saveWatchListButton.Location = new System.Drawing.Point(124, 535);
@@ -241,41 +177,17 @@
             this.memoryWatchLabel.TabIndex = 12;
             this.memoryWatchLabel.Text = "Memory Watch:";
             // 
-            // mobyInspectorLabel
-            // 
-            this.mobyInspectorLabel.AutoSize = true;
-            this.mobyInspectorLabel.Location = new System.Drawing.Point(430, 9);
-            this.mobyInspectorLabel.Name = "mobyInspectorLabel";
-            this.mobyInspectorLabel.Size = new System.Drawing.Size(83, 13);
-            this.mobyInspectorLabel.TabIndex = 13;
-            this.mobyInspectorLabel.Text = "Moby Inspector:";
-            // 
-            // dumpButton
-            // 
-            this.dumpButton.Location = new System.Drawing.Point(915, 25);
-            this.dumpButton.Name = "dumpButton";
-            this.dumpButton.Size = new System.Drawing.Size(59, 23);
-            this.dumpButton.TabIndex = 14;
-            this.dumpButton.Text = "Dump";
-            this.dumpButton.UseVisualStyleBackColor = true;
-            this.dumpButton.Click += new System.EventHandler(this.dumpButton_Click);
-            // 
             // MemoryForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(986, 566);
-            this.Controls.Add(this.dumpButton);
-            this.Controls.Add(this.mobyInspectorLabel);
+            this.ClientSize = new System.Drawing.Size(429, 566);
             this.Controls.Add(this.memoryWatchLabel);
             this.Controls.Add(this.watchlistsLabel);
             this.Controls.Add(this.savedWatchlistsComboBox);
             this.Controls.Add(this.typeLabel);
             this.Controls.Add(this.addressLabel);
             this.Controls.Add(this.saveWatchListButton);
-            this.Controls.Add(this.mobyInspectorListView);
-            this.Controls.Add(this.refreshMobysButton);
-            this.Controls.Add(this.selectedMobyComboBox);
             this.Controls.Add(this.watchedMemoryAddressesListView);
             this.Controls.Add(this.addMemoryWatchButton);
             this.Controls.Add(this.registerAddressTypeCombo);
@@ -286,7 +198,7 @@
             this.MinimizeBox = false;
             this.Name = "MemoryForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Memory utilities";
+            this.Text = "Memory Utilities";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MemoryForm_FormClosing);
             this.Load += new System.EventHandler(this.MemoryForm_Load);
             this.ResumeLayout(false);
@@ -303,19 +215,11 @@
         private System.Windows.Forms.ColumnHeader AddressColumnHeader;
         private System.Windows.Forms.ColumnHeader ValueColumnHeader;
         private System.Windows.Forms.ColumnHeader nameColumnHeader;
-        private System.Windows.Forms.ComboBox selectedMobyComboBox;
-        private System.Windows.Forms.Button refreshMobysButton;
-        private System.Windows.Forms.ListView mobyInspectorListView;
-        private System.Windows.Forms.ColumnHeader mobyAddressHeader;
-        private System.Windows.Forms.ColumnHeader mobyPropNameHeader;
-        private System.Windows.Forms.ColumnHeader mobyValueHeader;
         private System.Windows.Forms.Button saveWatchListButton;
         private System.Windows.Forms.Label addressLabel;
         private System.Windows.Forms.Label typeLabel;
         private System.Windows.Forms.ComboBox savedWatchlistsComboBox;
         private System.Windows.Forms.Label watchlistsLabel;
         private System.Windows.Forms.Label memoryWatchLabel;
-        private System.Windows.Forms.Label mobyInspectorLabel;
-        private System.Windows.Forms.Button dumpButton;
     }
 }

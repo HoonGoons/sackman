@@ -236,6 +236,22 @@ namespace racman
                 gameName = "RAC 4";
                 rac4.ShowDialog();
             }
+            else if (game == "BCES00850" || game == "BCJS30058")
+            {
+                Hide();
+                func.api.Notify("sackMAN connected!");
+                LBP2Form lbp2 = new LBP2Form(new lbp2(func.api));
+                gameName = "LBP2";
+                lbp2.ShowDialog();
+            }
+            else if (game == "BCUS98208" || game == "BCJS30018")
+            {
+                Hide();
+                func.api.Notify("sackMAN connected!");
+                LBP1Form lbp1 = new LBP1Form(new lbp1(func.api));
+                gameName = "LBP1";
+                lbp1.ShowDialog();
+            }
             else if (game == "NPUA80966" || game == "NPEA00453" || game == "BCES00511" || game == "BCES00726")
             {
                 Hide();
@@ -267,7 +283,7 @@ namespace racman
                         // memory viewer does not do anything if you dont initialize one of the forms... for whatever reason
                         // horrible hack i am so fucking lazy to figure out this shit
                         // fuck this codebase
-                        RAC3Form rac3 = new RAC3Form(new rac3(func.api)); 
+                        RAC3Form rac3 = new RAC3Form(new rac3(func.api));
 
                         modLoaderForm = new ModLoaderForm();
                         modLoaderForm.Show();

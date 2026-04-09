@@ -98,7 +98,7 @@ namespace racman
             this.Name = "AttachPS3Form";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Attach to Ratchet & Clank";
+            this.Text = "Attach to Game";
             this.Load += new System.EventHandler(this.AttachPS3Form_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
