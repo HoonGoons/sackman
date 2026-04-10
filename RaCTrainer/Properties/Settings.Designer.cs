@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace racman.Properties {
+namespace sackMAN.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]

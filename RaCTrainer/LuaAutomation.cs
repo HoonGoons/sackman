@@ -5,13 +5,11 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.Sockets;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using NLua;
+using sackMAN.Memory;
 
-namespace racman
+namespace sackMAN
 {
     class LuaAutomation
     {
@@ -155,7 +153,7 @@ namespace racman
             state["GAME_PID"] = func.api.getCurrentPID();
             state["Inputs"] = new InputsClass();
 
-            // Load racman standard library
+            // Load sackMAN standard library
             string standardLibsFolder = $"{Directory.GetCurrentDirectory()}\\mods\\libs\\standard\\";
 
             if (Directory.Exists(standardLibsFolder))
@@ -485,43 +483,6 @@ namespace racman
             Ratchetron api = (Ratchetron)func.api;
             var res = api.ReadMemory(pid, (uint)address, 1);
             return (int)res[0];
-        }
-
-        private static void SetLapFlagAddressInForm(RAC2Form rac2form, int value)
-        {
-            if (rac2form.InvokeRequired)
-            {
-                Action safeWrite = delegate { rac2form?.UpdateLapFlag(value); };
-                rac2form?.Invoke(safeWrite);
-            }
-            else
-            {
-                rac2form?.UpdateLapFlag(value);
-            }
-        }
-
-        // Special hook for use with the lap skip trainer UI
-        public static void SetLapFlagAddress(int address)
-        {
-            RAC2Form rac2form = null;
-            for (var i = 0; i < Application.OpenForms.Count; i++)
-            {
-                // lmao 
-                var form = Application.OpenForms[i];
-                if (form is RAC2Form)
-                    rac2form = (RAC2Form)form;
-            }
-
-            if (rac2form == null)
-                throw new Exception("Called SetLapFlagAddress from non-RC2 game!");
-            SetLapFlagAddressInForm(rac2form, 0);
-
-            int pid = AttachPS3Form.pid;
-            Ratchetron api = (Ratchetron)func.api;
-            api.SubMemory(pid, (uint)address, 1, (flag) =>
-            {
-                SetLapFlagAddressInForm(rac2form, flag[0]);
-            });
         }
     }
 

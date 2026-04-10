@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 using System.Windows.Forms;
 
-namespace racman
+namespace sackMAN
 {
     public partial class InputDisplay : Form
     {

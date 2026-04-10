@@ -1,0 +1,5 @@
+#- name: 1.21 User Selector Bypass
+#- author: kylometra, ennuo
+#- href: https://github.com/HoonGoons/sackman
+
+0x2af934: 0x48000040

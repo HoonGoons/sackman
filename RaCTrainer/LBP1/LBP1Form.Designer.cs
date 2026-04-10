@@ -1,4 +1,4 @@
-﻿namespace racman
+﻿namespace sackMAN.LBP1
 {
     partial class LBP1Form
     {

@@ -1,4 +1,4 @@
-﻿namespace racman
+﻿namespace sackMAN
 {
     partial class MemoryForm
     {

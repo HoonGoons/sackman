@@ -1,5 +1,5 @@
 ﻿
-namespace racman
+namespace sackMAN
 {
     partial class AttachPS3Form
     {

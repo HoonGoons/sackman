@@ -1,10 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
-using System.Reflection;
 
-using AutoUpdaterDotNET;
-
-namespace racman
+namespace sackMAN
 {
     static class Program
     {
@@ -18,7 +15,7 @@ namespace racman
         static void Main(string[] args)
         {
 #if !DEBUG
-            AutoUpdater.Start("https://MichaelRelaxen.github.io/racman/update.xml");
+            AutoUpdater.Start("https://MichaelRelaxen.github.io/sackMAN/update.xml");
             AutoUpdater.RunUpdateAsAdmin = false;
 #endif
 

@@ -1,17 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Collections;
+using System.IO;
 using System.Linq;
+using System.Net;
 using System.Net.Sockets;
 using System.Text;
-using System.Threading.Tasks;
-using System.Net;
-using System.IO;
 using System.Threading;
 using System.Windows.Forms;
-using System.Linq.Expressions;
 
-namespace racman
+namespace sackMAN.Memory
 {
     public class Ratchetron : IPS3API
     {
@@ -307,7 +304,7 @@ namespace racman
                 {
                     if (port++ > 5000)
                     {
-                        MessageBox.Show("Tried to open data connection on all ports between 4000 and 5000, but that failed. Did you deny RaCMAN firewall access?");
+                        MessageBox.Show("Tried to open data connection on all ports between 4000 and 5000, but that failed. Did you deny sackMAN firewall access?");
                         return;
                     }
                 }

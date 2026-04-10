@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using sackMAN.Memory;
 
-namespace racman
+namespace sackMAN.offsets.LBP1
 {
     public class LBP1Addresses : IAddresses
     {

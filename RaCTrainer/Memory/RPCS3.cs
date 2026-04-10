@@ -1,20 +1,14 @@
-﻿using racman;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
-using System.Runtime.InteropServices.ComTypes;
-using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading;
-using System.Windows;
 using System.Windows.Forms;
-using System.Windows.Markup;
 
-
-namespace racman.Memory
+namespace sackMAN.Memory
 {
     internal class RPCS3 : IPS3API
     {
@@ -323,18 +317,18 @@ namespace racman.Memory
             throw new NotImplementedException();
         }
     }
-}
 
-internal struct MemorySubItem
-{
-    public uint Address;
-    public uint Size;
-    public IPS3API.MemoryCondition Condition;
-    public bool Freeze;
-    public bool Released;
+    internal struct MemorySubItem
+    {
+        public uint Address;
+        public uint Size;
+        public IPS3API.MemoryCondition Condition;
+        public bool Freeze;
+        public bool Released;
 
-    public byte[] LastValue;
-    public byte[] SetValue;
+        public byte[] LastValue;
+        public byte[] SetValue;
 
-    public Action<byte[]> Callback;
+        public Action<byte[]> Callback;
+    }
 }

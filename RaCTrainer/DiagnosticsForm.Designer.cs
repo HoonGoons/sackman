@@ -1,5 +1,5 @@
 ﻿
-namespace racman
+namespace sackMAN
 {
     partial class DiagnosticsForm
     {
@@ -109,7 +109,7 @@ namespace racman
             this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.startButton);
             this.Name = "DiagnosticsForm";
-            this.Text = "RaCMAN Diagnostics";
+            this.Text = "sackMAN Diagnostics";
             this.ResumeLayout(false);
             this.PerformLayout();
 

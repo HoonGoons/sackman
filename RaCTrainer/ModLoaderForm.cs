@@ -1,17 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.IO;
 using System.IO.Compression;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using NLua;
+using sackMAN.Memory;
 
-namespace racman
+namespace sackMAN
 {
     public partial class ModLoaderForm : Form
     {
@@ -24,7 +19,7 @@ namespace racman
         {
             InitializeComponent();
 
-            gameModFolder = $"{Directory.GetCurrentDirectory()}\\mods\\{AttachPS3Form.game}\\";
+            gameModFolder = $"{Directory.GetCurrentDirectory()}\\mods\\{AttachPS3Form.gameName}\\";
 
             if (mods == null)
             {
@@ -249,8 +244,8 @@ namespace racman
                 {
                     try
                     {
-                        ZipFile.ExtractToDirectory(openFileDialog.FileName, $"{Path.GetTempPath()}\\racman\\{AttachPS3Form.game}\\");
-                        var directories = Directory.GetDirectories($"{Path.GetTempPath()}\\racman\\{AttachPS3Form.game}\\");
+                        ZipFile.ExtractToDirectory(openFileDialog.FileName, $"{Path.GetTempPath()}\\sackMAN\\{AttachPS3Form.game}\\");
+                        var directories = Directory.GetDirectories($"{Path.GetTempPath()}\\sackMAN\\{AttachPS3Form.game}\\");
 
                         // Find first directory with a path.txt file
                         string directoryName = "";
@@ -307,7 +302,7 @@ namespace racman
                         }
 
                         // Merge folders
-                        DirectoryInfo source = new DirectoryInfo($"{Path.GetTempPath()}\\racman\\{AttachPS3Form.game}\\{directoryName}");
+                        DirectoryInfo source = new DirectoryInfo($"{Path.GetTempPath()}\\sackMAN\\{AttachPS3Form.game}\\{directoryName}");
                         DirectoryInfo target = new DirectoryInfo($"{Directory.GetCurrentDirectory()}\\mods\\{AttachPS3Form.game}\\{directoryName}");
 
                         CopyAll(source, target);
@@ -328,7 +323,7 @@ namespace racman
                         MessageBox.Show("Failed to extract ZIP. ");
                     } finally
                     {
-                        Directory.Delete($"{System.IO.Path.GetTempPath()}\\racman\\", true);
+                        Directory.Delete($"{System.IO.Path.GetTempPath()}\\sackMAN\\", true);
                     }
 
                     this.ReloadMods();
@@ -378,7 +373,7 @@ namespace racman
                 AttachPS3Form.console.Show();
             } else
             {
-                RacManConsole console = new RacManConsole();
+                SackmanConsole console = new SackmanConsole();
                 console.Show();
             }
         }
@@ -391,7 +386,7 @@ namespace racman
             }
             else
             {
-                RacmanScripting scripting = new RacmanScripting();
+                SackmanScripting scripting = new SackmanScripting();
                 scripting.Show();
             }
         }
