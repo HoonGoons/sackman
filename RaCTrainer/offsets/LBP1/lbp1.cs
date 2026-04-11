@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using racman;
 using sackMAN.Memory;
 
 namespace sackMAN.offsets.LBP1
