@@ -14,7 +14,7 @@ namespace sackMAN
         static void Main(string[] args)
         {
 #if !DEBUG
-            AutoUpdater.Start("https://HoonGoons.github.io/sackman/update.xml");
+            AutoUpdater.Start("https://raw.githubusercontent.com/HoonGoons/sackman/refs/heads/update/update.xml");
             AutoUpdater.RunUpdateAsAdmin = false;
 #endif
 
