@@ -1,15 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
+using racman;
 using sackMAN.Memory;
 
 namespace sackMAN.offsets.LBP1
 {
     public class LBP1Addresses : IAddresses
     {
-        // BCUS98208 (NTSC Game of the Year Edition) v1.21
-
-        public uint loadvalue1 = 0xA07010;
-        public uint loadvalue2 = 0xA07004;
+        public uint loadvalue1;
+        public uint loadvalue2;
 
         public uint boltCount => throw new NotImplementedException();
 
@@ -30,6 +29,18 @@ namespace sackMAN.offsets.LBP1
     {
         public lbp1(IPS3API api) : base(api)
         {
+            string gameVersion = LBP1VersionForm.LBP1VersionType;
+            string gameID = AttachPS3Form.game;
+            if (gameVersion == "v1.21")
+            {
+                addr.loadvalue1 = 0xA07010;
+                addr.loadvalue2 = 0xA07004;
+            }
+            else if(gameVersion == "v1.30/Latest" || gameID == "NPEA00241" || gameID == "NPUA80472" || gameID == "NPJA00052" || gameID == "NPHA80092" || gameID == "BCES00611")
+            {
+                addr.loadvalue1 = 0x8C2FD4;
+                addr.loadvalue2 = 0x8C2FC8;
+            }
         }
 
         public static LBP1Addresses addr = new LBP1Addresses();

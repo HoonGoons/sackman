@@ -1,12 +1,13 @@
-﻿using System;
-using System.IO;
-using System.Windows.Forms;
-using System.Reflection;
+﻿using racman;
 using sackMAN.LBP1;
 using sackMAN.LBP2;
 using sackMAN.Memory;
 using sackMAN.offsets.LBP1;
 using sackMAN.offsets.LBP2;
+using System;
+using System.IO;
+using System.Reflection;
+using System.Windows.Forms;
 
 namespace sackMAN
 {
@@ -151,8 +152,33 @@ namespace sackMAN
             }
             else if (game == "BCES00141" || game == "BCUS98148" || game == "BCAS20058" || game == "BCJS30018" || game == "BCUS98208" || game == "BCAS20078")
             {
+                func.api.Notify("sackMAN connected!");
+                LBP1VersionForm formVersion = new LBP1VersionForm();
+                formVersion.ShowDialog();
+                Hide();
+                switch (LBP1VersionForm.LBP1VersionType)
+                {
+
+                    case "v1.30/Latest":
+                        {
+                            LBP1Form lbp1 = new LBP1Form(new lbp1(func.api));
+                            lbp1.ShowDialog();
+                            break;
+                        }
+                    case "v1.21":
+                        {
+                            LBP1Form lbp1 = new LBP1Form(new lbp1(func.api));
+                            lbp1.ShowDialog();
+                            break;
+                        }
+                }
+                gameName = "LBP1";
+            }
+            else if (game == "NPEA00241" || game == "NPUA80472" || game == "NPJA00052" || game == "NPHA80092" || game == "BCES00611")
+            {
                 Hide();
                 func.api.Notify("sackMAN connected!");
+                MessageBox.Show("You're on a release of the game that does not support v1.21. This will default to thinking the game is on latest patch. Be sure that you are on latest!");
                 LBP1Form lbp1 = new LBP1Form(new lbp1(func.api));
                 gameName = "LBP1";
                 lbp1.ShowDialog();
