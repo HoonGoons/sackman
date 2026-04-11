@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <item>
-    <version>1.22.0.0</version>
-    <url>https://github.com/MichaelRelaxen/racman/releases/download/v1.22.0/RaCMAN.zip</url>
-    <changelog>https://michaelrelaxen.github.io/racman/v1.22.0.0.html</changelog>
+    <version>0.1.1.0</version>
+    <url>https://github.com/HoonGoons/sackman/releases/download/v0.1.1-prerelease/sackMAN.zip</url>
     <mandatory>false</mandatory>
 </item>
  
