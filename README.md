@@ -6,7 +6,7 @@ For more information about game patches, Lua automations, and other details, ple
 
 ## Supported Games
 - LittleBigPlanet - (Game Versions v1.21 and v1.30/Latest)
-- LittleBigPlanet 2 - (Game Version v1.00)
+- LittleBigPlanet 2 - (Game Versions v1.00 and v1.33/Latest)
 
 ## Supported Features
 - Load Remover with LiveSplit
