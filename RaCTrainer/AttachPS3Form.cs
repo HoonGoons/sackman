@@ -143,8 +143,33 @@ namespace sackMAN
 
             if (game == "BCUS98245" || game == "BCES00850" || game == "BCES01086" || game == "BCJS30058" || game == "BCAS20113" || game == "BCKS10150")
             {
+                func.api.Notify("sackMAN connected!");
+                LBP2VersionForm formVersion = new LBP2VersionForm();
+                formVersion.ShowDialog();
+                Hide();
+                switch (LBP2VersionForm.LBP2VersionType)
+                {
+
+                    case "v1.33/Latest":
+                        {
+                            LBP2Form lbp2 = new LBP2Form(new lbp2(func.api));
+                            lbp2.ShowDialog();
+                            break;
+                        }
+                    case "v1.00/Unpatched":
+                        {
+                            LBP2Form lbp2 = new LBP2Form(new lbp2(func.api));
+                            lbp2.ShowDialog();
+                            break;
+                        }
+                }
+                gameName = "LBP2";
+            }
+            else if (game == "NPUA80662" || game == "NPEA00324" || game == "BCUS98372" || game == "BCES01693" || game == "BCES01694" || game == "NPEA00437")
+            {
                 Hide();
                 func.api.Notify("sackMAN connected!");
+                MessageBox.Show("You're on a release of the game that does not support v1.00. This will default to thinking the game is on latest patch. Be sure that you are on latest!");
                 LBP2Form lbp2 = new LBP2Form(new lbp2(func.api));
                 gameName = "LBP2";
                 lbp2.ShowDialog();

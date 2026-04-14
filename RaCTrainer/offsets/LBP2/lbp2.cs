@@ -6,11 +6,9 @@ namespace sackMAN.offsets.LBP2
 {
     public class LBP2Addresses : IAddresses
     {
-        // BCES00850 (PAL Multi-Language Disc) v1.00
-
-        public uint loadvalue1 = 0xC8DDB8;
-        public uint loadvalue2 = 0xCF8E6C;
-        public uint loadvalue3 = 0xD08408;
+        public uint loadvalue1;
+        public uint loadvalue2;
+        public uint loadvalue3;
 
         public uint boltCount => throw new NotImplementedException();
 
@@ -31,6 +29,25 @@ namespace sackMAN.offsets.LBP2
     {
         public lbp2(IPS3API api) : base(api)
         {
+            string gameVersion = LBP2VersionForm.LBP2VersionType;
+            string gameID = AttachPS3Form.game;
+            if (gameVersion == "v1.00/Unpatched")
+            {
+                addr.loadvalue1 = 0xC8DDB8;
+                addr.loadvalue2 = 0xD05658;
+                // 0xD05668 for loadvalue2 also works too
+                // 0xCF8E6C is game freeze value
+                addr.loadvalue3 = 0xD08408;
+            }
+            else if (gameVersion == "v1.33/Latest" || gameID == "NPUA80662" || gameID == "NPEA00324" || gameID == "BCUS98372" || gameID == "BCES01693" || gameID == "BCES01694" || gameID == "NPEA00437")
+            {
+                addr.loadvalue1 = 0xDC765C;
+                // other addresses for loadvalue1 are 0xDC7668 and OxE249D4
+                addr.loadvalue2 = 0xE3F6A8;
+                // 0xE3F6B8 for loadvalue2 also works too
+                // 0xE326AC is game freeze value
+                addr.loadvalue3 = 0xE430B8;
+            }
         }
 
         public static LBP2Addresses addr = new LBP2Addresses();
