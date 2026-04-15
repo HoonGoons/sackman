@@ -244,8 +244,8 @@ namespace sackMAN
                 {
                     try
                     {
-                        ZipFile.ExtractToDirectory(openFileDialog.FileName, $"{Path.GetTempPath()}\\sackMAN\\{AttachPS3Form.game}\\");
-                        var directories = Directory.GetDirectories($"{Path.GetTempPath()}\\sackMAN\\{AttachPS3Form.game}\\");
+                        ZipFile.ExtractToDirectory(openFileDialog.FileName, $"{Path.GetTempPath()}\\sackMAN\\{AttachPS3Form.gameName}\\");
+                        var directories = Directory.GetDirectories($"{Path.GetTempPath()}\\sackMAN\\{AttachPS3Form.gameName}\\");
 
                         // Find first directory with a path.txt file
                         string directoryName = "";
@@ -268,7 +268,7 @@ namespace sackMAN
                         }
 
                         // If there is already an installed mod, just replace it if version is newer
-                        Mod installedMod = GetMod($"{Directory.GetCurrentDirectory()}\\mods\\{AttachPS3Form.game}\\{directoryName}");
+                        Mod installedMod = GetMod($"{Directory.GetCurrentDirectory()}\\mods\\{AttachPS3Form.gameName}\\{directoryName}");
 
                         bool upgrade = false;
                         if (installedMod != null)
@@ -302,8 +302,8 @@ namespace sackMAN
                         }
 
                         // Merge folders
-                        DirectoryInfo source = new DirectoryInfo($"{Path.GetTempPath()}\\sackMAN\\{AttachPS3Form.game}\\{directoryName}");
-                        DirectoryInfo target = new DirectoryInfo($"{Directory.GetCurrentDirectory()}\\mods\\{AttachPS3Form.game}\\{directoryName}");
+                        DirectoryInfo source = new DirectoryInfo($"{Path.GetTempPath()}\\sackMAN\\{AttachPS3Form.gameName}\\{directoryName}");
+                        DirectoryInfo target = new DirectoryInfo($"{Directory.GetCurrentDirectory()}\\mods\\{AttachPS3Form.gameName}\\{directoryName}");
 
                         CopyAll(source, target);
 
@@ -316,8 +316,9 @@ namespace sackMAN
                         }
 
 
-                        //ZipFile.ExtractToDirectory(openFileDialog.FileName, $"{Directory.GetCurrentDirectory()}\\mods\\{AttachPS3Form.game}\\");
-                    } catch (IOException exception)
+                        //ZipFile.ExtractToDirectory(openFileDialog.FileName, $"{Directory.GetCurrentDirectory()}\\mods\\{AttachPS3Form.gameName}\\");
+                    }
+                    catch (IOException exception)
                     {
                         // There's apparently no easy way to tell ZipFile.ExtractToDirectory to overwrite files smh
                         MessageBox.Show("Failed to extract ZIP. ");
@@ -552,7 +553,7 @@ namespace sackMAN
 
         private bool LoadLuaAutomation(string filename)
         {
-            LuaAutomation automation = new LuaAutomation(filename, AttachPS3Form.game, this);
+            LuaAutomation automation = new LuaAutomation(filename, AttachPS3Form.gameName, this);
             this.luaAutomations.Add(automation);
 
             return !automation.failed;
